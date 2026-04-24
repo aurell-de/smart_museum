@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background gradasi */
+body {
+    background: linear-gradient(135deg, #0a1f44, #000000);
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #000000, #0a1f44);
+}
+
+/* Logo */
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Search tengah */
+.search-box {
+    display: flex;
+    justify-content: center;
+}
+
+.search-box input {
+    padding: 8px;
+    width: 250px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+}
+
+/* Menu kanan */
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #4da6ff;
+}
+
+/* Hero */
+.hero {
+    height: 100vh; 
+    background: url('assets/img/labuhan\ bajo.jpg') no-repeat center/cover;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+/* Text Hero */
+
+/* Gallery */
+.gallery {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* Grid */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Card */
+.card {
+    background: white;
+    color: black;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Gambar */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Isi */
+.card h3 {
+    margin: 15px 0 10px;
+}
+
+.card p {
+    padding: 0 15px 20px;
+    font-size: 14px;
+}
+
+/* about*/
+.about {
+    padding: 50px;
+    text-align: center;
+}
+
+.desc {
+    margin-top: 20px;
+}
