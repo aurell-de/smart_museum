@@ -1096,3 +1096,30 @@ footer{
         font-size: 2rem;
     }
 }
+
+/* Qr */
+.card-content {
+    display: flex;
+    flex-direction: column; 
+    padding: 15px;
+    gap: 10px; 
+}
+
+.qr-wrapper {
+    position: static; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid gold;
+    background: rgba(255, 255, 255, 0.05);
+    width: fit-content;
+    align-self: center; 
+}
+
+/* Ukuran QR agar proporsional */
+.qr-card {
+    width: 100px;
+    height: 100px;
+}
