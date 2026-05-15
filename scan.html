@@ -2,35 +2,157 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Scan</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Museum Scan</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="navbar">
-    <div class="logo">MuseumX</div>
+    <!-- NAVBAR -->
 
-    <div class="search-box">
-        <input type="text" placeholder="Cari...">
+   <header class="navbar">
+
+    <div class="logo">
+        MuseumX
     </div>
 
     <nav class="menu">
+
         <a href="index.html">Home</a>
+
         <a href="scan.html">Scan</a>
+
         <a href="gallery.html">Gallery</a>
+
         <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+
+        <a href="kuis.html">Quiz</a>
+
     </nav>
+
 </header>
+    <!-- MAIN -->
 
-<section style="padding:50px; text-align:center;">
-    <h1>Fitur Scan</h1>
-    <p>Gunakan fitur ini untuk memindai QR Code atau barcode pada koleksi museum.</p>
+    <div class="container">
 
-    <button style="margin-top:20px; padding:10px 20px; border:none; border-radius:5px;">
-        Mulai Scan
-    </button>
-</section>
+        <!-- LEFT -->
+
+        <div class="scan-section">
+
+            <h1>MUSEUMX DESKTOP SCAN</h1>
+
+            <p class="subtitle">
+                Pindai QR Code Koleksi via Webcam
+            </p>
+
+            <div class="camera-wrapper">
+
+                <div class="camera-title">
+                    Webcam Feed
+                </div>
+
+                <div class="camera-box">
+
+                    <video id="video" autoplay></video>
+
+                    <!-- scan line -->
+                    <div class="scan-line"></div>
+
+                </div>
+
+            </div>
+
+            <div class="waiting">
+                Menunggu Scan...
+            </div>
+
+            <div class="instruction">
+                (Arahkan QR dari HP/Tablet Anda ke Kamera)
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="side-panel">
+
+            <h3>STATUS & RIWAYAT SCAN</h3>
+
+            <!-- STATUS -->
+
+            <div class="card">
+
+                <div class="icon">
+                    📷
+                </div>
+
+                <p>Webcam Aktif</p>
+
+            </div>
+
+            <!-- RESULT -->
+
+            <div class="card">
+
+                <h4>Hasil Pindai Terakhir</h4>
+
+                <img src="assets/img/galeri/rempah.jpg" alt="foto code">
+
+                <p>REMPAH - Saksi Sejarah</p>
+
+                <small>(ID: ID_G0N001)</small>
+
+                <button>
+                    Lihat Detail
+                </button>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <button class="upload-btn">
+                Switch to file upload mode
+            </button>
+
+            <!-- INPUT -->
+
+            <div class="method-box">
+
+                <p>Input Methods:</p>
+
+                <small>
+                    — Input Text &nbsp;&nbsp;&nbsp; — Scan via webcam
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script>
+
+const video = document.getElementById("video");
+
+navigator.mediaDevices.getUserMedia({
+    video:true
+})
+
+.then(function(stream){
+
+    video.srcObject = stream;
+
+})
+
+.catch(function(error){
+
+    alert("Kamera tidak dapat diakses");
+
+});
+
+</script>
 
 </body>
 </html>

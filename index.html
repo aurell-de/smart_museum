@@ -4,52 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Museum Explorer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<header class="navbar">
-    <div class="logo">MuseumX</div>
-
-    <div class="search-box">
-        <input type="text" placeholder="Cari koleksi...">
+  
+<header>
+    <div class="logo">
+        <img src="assets/img/logo Unived Bengkulu PNG CDR tanpa background.png" alt="Logo">
+        <span>Museum Bengkulu</span>
     </div>
-
     <nav class="menu">
         <a href="index.html">Home</a>
         <a href="scan.html">Scan</a>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="kuis.html">Quiz</a>
     </nav>
 </header>
 
-<!-- Hero -->
 <section class="hero">
-    <h1>Smart Museum Explorer</h1>
-</section>
+    <div class="overlay">
+        <h1>WELCOME TO THE BENGKULU MUSEUM</h1>
+        <h2>Jelajahi Sejarah, Temukan Inspirasi</h2>
+        <p>Temukan berbagai koleksi artefak bersejarah</p>
 
+        <div class="search-box">
+            <input type="text" placeholder="Cari koleksi museum...">
+            <button>Cari</button>
+        </div>
+
+    
+</div>
+</section>
+<section>    
+    <div class="opening-hours-card">
+    <h3>Jam Operasional</h3>
+
+    <div class="status-badge">
+        <span class="dot-online"></span>
+        <span>Sedang Buka</span>
+        <span class="time">Tutup 16:00</span>
+    </div>
+
+    <div class="hours-list">
+        <p>Selasa – Kamis <span>08:00 – 16:00</span></p>
+        <p>Jumat <span>08:00 – 16:30</span></p>
+        <p>Sabtu – Minggu <span>08:00 – 17:00</span></p>
+        <p class="closed">Senin <span>Tutup</span></p>
+    </div></section>
+ 
 <!-- Gallery -->
 <section class="gallery">
+    <section class="categories">
+    <h2>Eksplorasi Berdasarkan Kategori</h2>
+    <div class="category-grid">
+        <div class="category-item">
+            <div class="category-icon">🏺</div>
+            <h3>Arkeologi</h3>
+            <p>Temuan benda purbakala dan prasejarah Bengkulu.</p>
+        </div>
+        <div class="category-item">
+            <div class="category-icon">🎭</div>
+            <h3>Etnografi</h3>
+            <p>Koleksi budaya, pakaian adat, dan alat musik suku lokal.</p>
+        </div>
+        <div class="category-item">
+            <div class="category-icon">📜</div>
+            <h3>Filologi</h3>
+            <p>Naskah kuno dan literatur sejarah masa lalu.</p>
+        </div>
+    </div>
+</section>
+
+<section class="visit-info">
+    <div class="info-container">
+        <div class="info-text">
+            <h2>Rencanakan Kunjungan Anda</h2>
+            <p>Nikmati perjalanan sejarah yang tak terlupakan di jantung kota Bengkulu.</p>
+            <div class="ticket-prices">
+                <div class="price-item">
+                    <span>Dewasa</span>
+                    <strong>Rp 5.000</strong>
+                </div>
+                <div class="price-item">
+                    <span>Anak-anak / Pelajar</span>
+                    <strong>Rp 3.000</strong>
+                </div>
+            
+        <div class="info-features">
+            <ul>
+                <li>✅ Pemandu Wisata Profesional</li>
+                <li>✅ Area Parkir Luas</li>
+                <li>✅ Akses Wi-Fi Gratis</li>
+                <li>✅ Perpustakaan Sejarah</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
     <h2>Koleksi Unggulan</h2>
 
     <div class="gallery-container">
         
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1582550945154-66ea8fff25e1" alt="Artefak Kuno">
-            <h3>Artefak Kuno</h3>
+            <img src="assets/img/about/kulintang.jpg" alt="Artefak Kuno">
+            <h3>kulintang</h3>
             <p>Koleksi benda bersejarah dari peradaban kuno yang memiliki nilai budaya tinggi.</p>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1572947650440-e8a97ef053b2" alt="seni lukisan>
-            <h3>Seni Lukis</h3>
+            <img src="assets/img/about/alat tenun.jpg" alt="seni lukisan">
+            <h3>Alat Tenun</h3>
             <p>Berbagai karya seni lukis klasik hingga modern dari seniman terkenal dunia.</p>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08"alt="Artefak Kuno">
-            <h3>Patung Bersejarah</h3>
+            <img src="assets/img/about/gading-gajah.jpg"alt="Artefak Kuno">
+            <h3>Gading Gajah</h3>
             <p>Koleksi patung dengan nilai estetika tinggi yang menggambarkan sejarah.</p>
         </div>
 
