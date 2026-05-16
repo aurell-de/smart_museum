@@ -15,21 +15,15 @@
    <header class="navbar">
 
     <div class="logo">
-        MuseumX
+        Museum ARL
     </div>
 
     <nav class="menu">
 
         <a href="index.html">Home</a>
-
         <a href="scan.html">Scan</a>
-
         <a href="gallery.html">Gallery</a>
-
         <a href="about.html">About</a>
-
-        <a href="kuis.html">Quiz</a>
-
     </nav>
 
 </header>
@@ -55,7 +49,7 @@
 
                 <div class="camera-box">
 
-                    <video id="video" autoplay></video>
+                    <video id="reader" autoplay></video>
 
                     <!-- scan line -->
                     <div class="scan-line"></div>
@@ -95,33 +89,32 @@
             <!-- RESULT -->
 
             <div class="card">
-
                 <h4>Hasil Pindai Terakhir</h4>
-
                 <img src="assets/img/galeri/rempah.jpg" alt="foto code">
-
                 <p>REMPAH - Saksi Sejarah</p>
-
                 <small>(ID: ID_G0N001)</small>
-
-                <button>
-                    Lihat Detail
-                </button>
+               <button onclick="window.location.href='detail-rempah.html'">
+    Lihat Detail
+</button>
 
             </div>
 
             <!-- BUTTON -->
+<button class="upload-btn" id="uploadBtn">
+    Switch to file upload mode
+</button>
 
-            <button class="upload-btn">
-                Switch to file upload mode
-            </button>
+<input 
+    type="file"
+    id="fileInput"
+    accept="image/*"
+    style="display:none"
+>
 
             <!-- INPUT -->
 
             <div class="method-box">
-
                 <p>Input Methods:</p>
-
                 <small>
                     — Input Text &nbsp;&nbsp;&nbsp; — Scan via webcam
                 </small>
@@ -131,28 +124,15 @@
         </div>
 
     </div>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+<script src="js/scan.js"></script>
 
-<script>
+<footer>
+        <p>&copy; 2026 Niken Aurellia. Hak Cipta Dilindungi.</p>
+    </footer>
 
-const video = document.getElementById("video");
-
-navigator.mediaDevices.getUserMedia({
-    video:true
-})
-
-.then(function(stream){
-
-    video.srcObject = stream;
-
-})
-
-.catch(function(error){
-
-    alert("Kamera tidak dapat diakses");
-
-});
-
-</script>
 
 </body>
 </html>
+
+

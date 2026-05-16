@@ -12,25 +12,30 @@
 body {
     background-color: #0F1115;
 }
+body{
+    padding-top: 80px;
+}
 .overlay {
     background: linear-gradient(to right, rgba(15, 17, 21, 0.9), rgba(15, 17, 21, 0.4));
 }
 
 /* HEADER / NAVBAR */
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    padding: 15px 30px;
+    padding:15px 30px;
 
-    background: transparent;
-    z-index: 10;
+    background: rgba(15,17,21,0.7);
+    backdrop-filter: blur(10px);
+
+    z-index:1000;
 }
 
 /* Logo + teks */
@@ -125,6 +130,32 @@ header {
     font-size: 32px;
     margin-bottom: 40px;
 }
+.category-title{
+    color: gold;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 35px;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Garis lurus bawah */
+.category-title::after{
+    content: "";
+    display: block;
+
+    width: 120px;
+    height: 3px;
+
+    background: gold;
+
+    margin: 12px auto 0;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(255,215,0,0.7);
+}
 
 /* Grid */
 .gallery-container {
@@ -173,76 +204,104 @@ header {
     margin-top: 20px;
 }
 
-/* --- JAM BUKA --- */
+/* --- STYLE SECTION QUIZ HORIZONTAL --- */
 
-
-.hero-container {
-    
-    position: static; 
+.quiz-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.opening-hours-card {
-    position: absolute;
-    bottom: 40px; /* Jarak dari bawah gambar */
-    right: 40px;  /* Jarak dari kanan gambar */
-    width: 280px;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(44, 62, 80, 0.7));
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    padding: 15px;
-    color: white;
-    z-index: 100;
-}
-    .opening-hours-card {
-    background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(0, 0, 0, 0.7));
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    padding: 15px;
-    color: white;
-    z-index: 100;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-.opening-hours-card h3 {
-    margin: 0;
-    font-size: 16px;
+/* Judul Eksplorasi */
+.quiz-title {
+    color: #ffffff;
+    font-size: 28px;
     font-weight: bold;
-    border-top: 1px solid rgba(255, 255, 255, 0.938);
-    padding-top: 8px;
-    margin-top: 10px;
-    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-family: Arial, sans-serif;
 }
 
-.day-info {
-    font-size: 11px;
-    margin: 0 0 5px 0;
-    opacity: 0.7;
-    letter-spacing: 1px;
+/* Container dibuat Flexbox ke samping (Horizontal) */
+.quiz-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Supaya otomatis turun rapi jika dibuka di layar HP */
 }
 
-.status-badge {
+/* Base Card Kuis (Mirip persis seperti gambar yang Anda kirim) */
+.quiz-card {
+    background: #ffffff;
     display: flex;
     align-items: center;
-    gap: 10px;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 10px;
-    border-radius: 8px;
+    width: 360px; /* Lebar proporsional ke samping */
+    padding: 20px;
+    border-radius: 16px;
+    text-decoration: none; /* Menghilangkan underline link */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.dot-online {
-    height: 10px;
-    width: 10px;
-    background-color: #4CAF50; 
-    border-radius: 50%;
-    box-shadow: 0 0 8px #4CAF50;
-    flex-shrink: 0; /* Agar titik tidak gepeng */
+/* Efek sedikit terangkat saat di-hover */
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.time {
-    font-weight: bold;
+/* Pembungkus Icon Kotak di Sebelah Kiri */
+.quiz-icon-wrapper {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Mencegah ikon gepeng */
+    margin-right: 15px;
+}
+
+/* Warna background ikon sesuai kategori di gambar */
+.icon-blue { background-color: #e8f0fe; }
+.icon-green { background-color: #e6f4ea; }
+.icon-orange { background-color: #fce8e6; }
+
+.quiz-icon {
+    font-size: 24px;
+}
+
+/* Pengaturan Teks di dalam Card */
+.quiz-content {
+    text-align: left;
+    padding-right: 20px; /* Jarak agar teks tidak menabrak panah */
+}
+
+.quiz-content h3 {
+    margin: 0 0 4px 0;
+    color: #1e293b; /* Warna teks gelap tebal */
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.quiz-content p {
+    margin: 0;
+    color: #64748b; /* Warna teks deskripsi abu-abu halus */
     font-size: 13px;
-    white-space: nowrap;
+    line-height: 1.4;
 }
+
+/* Indikator Panah Kanan (›) */
+.quiz-arrow {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    color: #94a3b8;
+    font-weight: bold;
+}
+
 
 /* --- CATEGORIES SECTION --- */
 .categories {
@@ -278,60 +337,131 @@ header {
     margin-bottom: 15px;
 }
 
-/* --- VISIT INFO SECTION --- */
+/* --- VISIT INFO SECTION (REVISED) --- */
 .visit-info {
-    padding: 80px 50px;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-                url('../assets/img/bg/museum-interior.jpg') center/cover;
+    padding: 80px 20px;
+    background: linear-gradient(rgba(15, 17, 21, 0.95), rgba(15, 17, 21, 0.9)), 
+                url('../assets/img/bg/museum-interior.jpg') center/cover no-repeat;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
 }
 
 .info-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     max-width: 1100px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Jarak antara judul dan konten bawah */
 }
 
-.info-text {
-    flex: 1;
+/* Header Section (Judul Tengah) */
+.info-header {
+    text-align: center;
 }
 
+.info-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.info-header p {
+    color: #94a3b8;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Grid Pembagi Kiri dan Kanan */
+.info-content-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap; /* Fleksibel jika dibuka di layar HP */
+}
+
+/* SISI KIRI: TIKET */
 .ticket-prices {
-    margin: 25px 0;
     display: flex;
     gap: 20px;
+    flex: 1;
+    min-width: 300px;
 }
 
 .price-item {
-    background: rgba(255, 215, 0, 0.1);
-    padding: 15px;
-    border-left: 4px solid gold;
-    border-radius: 5px;
+    background: rgba(255, 215, 0, 0.04); /* Efek transparan gelap emas mewah */
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-left: 4px solid #ffd700; /* Garis vertikal emas tegas di kiri */
+    padding: 25px 20px;
+    border-radius: 12px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.price-item span {
+    display: block;
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
 }
 
 .price-item strong {
     display: block;
-    font-size: 20px;
-    color: gold;
+    font-size: 24px;
+    color: #ffd700; /* Warna emas cerah untuk harga */
+    font-weight: 700;
 }
 
-.btn-maps {
-    padding: 12px 25px;
-    background: gold;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
+/* SISI KANAN: FASILITAS */
+.info-features {
+    flex: 1;
+    min-width: 300px;
 }
 
 .info-features ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Jarak antar baris list */
 }
 
 .info-features li {
-    margin-bottom: 15px;
     font-size: 18px;
+    color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Custom Check Icon Pengganti Emoji */
+.check-icon {
+    background: rgba(76, 175, 80, 0.15);
+    color: #4CAF50; /* Warna hijau indikator sukses/centang */
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* RESPONSIF LAYAR HANDPHONE */
+@media (max-width: 768px) {
+    .info-content-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .ticket-prices {
+        width: 100%;
+    }
 }
 
 /* --- FOOTER --- */
@@ -342,73 +472,6 @@ footer {
     border-top: 1px solid #333;
     font-size: 14px;
     color: #888;
-}
-.opening-hours-card {
- 
-    position: relative;
-    margin: 80px auto 40px auto; 
-    
-    width: 300px;
-    padding: 20px;
-
-    border-radius: 15px;
-    background: linear-gradient(135deg, rgba(20,20,20,0.9), rgba(44,62,80,0.7));
-    border: 1px solid rgba(255,255,255,0.2);
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-   
-
-/* STATUS */
-.status-badge {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background: rgba(0,0,0,0.5);
-    padding: 10px;
-    border-radius: 8px;
-    margin: 15px 0;
-}
-
-/* TITIK HIJAU */
-.dot-online {
-    width: 10px;
-    height: 10px;
-    background: #4CAF50;
-    border-radius: 50%;
-    box-shadow: 0 0 8px #4CAF50;
-}
-
-/* LIST JAM */
-.hours-list p {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    margin-top: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 5px;
-}
-
-.hours-list span {
-    font-weight: bold;
-}
-
-/* SENIN TUTUP */
-.closed span {
-    color: red;
-}
-
-/* Judul Kategori di Gallery */
-.category-title {
-    text-align: left;
-    margin: 40px 0 20px 0;
-    color: gold;
-    border-left: 5px solid gold;
-    padding-left: 15px;
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 /* Container Utama Gallery */
@@ -581,15 +644,15 @@ video{
 /* RIGHT PANEL */
 
 .side-panel{
-    width:280px;
+    width:300px;
 }
 
 .side-panel h3{
     color:#ffd54f;
-    margin-bottom:20px;
+    margin-bottom:30px;
     font-size:18px;
 
-    margin-top:27px;
+    margin-top:30px;
 }
 
 /* CARD */
@@ -1122,4 +1185,87 @@ footer{
 .qr-card {
     width: 100px;
     height: 100px;
+}
+
+#reader{
+    width:100%;
+    height:500px;
+}/*quiz*/
+
+@media (max-width: 768px) {
+    
+    /* 1. Perbaikan Layout Utama (Kamera & Side Panel) */
+    .container {
+        flex-direction: column; /* Mengubah susunan dari ke samping menjadi ke bawah */
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .side-panel {
+        width: 100%; /* Lebar panel kanan menjadi penuh semulus layar HP */
+    }
+
+    /* 2. Mengatur Kamera Scan & Video agar Tidak Terpotong atau Terlalu Tinggi */
+    video, #reader {
+        height: auto !important; /* Mengganti tinggi kaku 500px menjadi otomatis */
+        aspect-ratio: 4 / 3;    /* Membentuk kotak kamera yang ideal di HP */
+        max-height: 350px;       /* Membatasi tinggi agar tidak memakan ruang layar */
+    }
+
+    .camera-wrapper {
+        padding: 10px; /* Memperkecil padding agar menghemat ruang */
+        border-radius: 18px;
+    }
+
+    .scan-section h1 {
+        font-size: 28px; /* Memperkecil ukuran judul di HP */
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    /* 3. Grid Galeri Koleksi (Dari 3 Kolom Menjadi 1 Kolom) */
+    .gallery-container {
+        grid-template-columns: 1fr; /* Di HP, kartu koleksi berbaris 1 per 1 ke bawah */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .card img {
+        height: 180px; /* Sedikit memperkecil tinggi gambar kartu di HP */
+    }
+
+    /* 4. Menyesuaikan QR Wrapper agar Tetap di Tengah dan Rapi */
+    .qr-wrapper {
+        width: 100%; /* Memenuhi lebar container kartu */
+        max-width: 140px; /* Batas aman kotak QR di HP */
+        margin-top: 15px;
+        padding: 8px;
+    }
+
+    .qr-card {
+        width: 100%;  /* QR Code menyesuaikan kotak pembungkusnya */
+        height: auto;
+        aspect-ratio: 1 / 1; /* Memastikan QR tetap berbentuk kotak sempurna */
+    }
+
+    /* 5. Bagian Kuis / Quiz Box */
+    .quiz-box {
+        padding: 10px;
+    }
+
+    .question {
+        padding: 20px 15px; /* Memperkecil padding box pertanyaan */
+    }
+
+    .question p {
+        font-size: 16px; /* Ukuran teks pertanyaan lebih bersahabat untuk layar kecil */
+    }
+
+    .quiz-category button {
+        padding: 10px 15px;
+        font-size: 14px;
+        margin: 5px; /* Tombol pilihan kategori kuis lebih rapat */
+    }
 }

@@ -1,0 +1,285 @@
+:root {
+    --bg-dark: #0F1115;
+    --card-white: #ffffff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --accent-gold: #ffd700;
+    --primary-blue: #2563eb;
+    --correct-green: #10b981;
+    --wrong-red: #ef4444;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.museum-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--accent-gold);
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Container Putih Kuis */
+.quiz-screen {
+    background: var(--card-white);
+    color: var(--text-dark);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Header */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 15px;
+}
+
+.btn-back {
+    background: #f1f5f9;
+    border: none;
+    color: #475569;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-back:hover {
+    background: #e2e8f0;
+    color: #0f1115;
+}
+
+.quiz-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.category-badge {
+    background: #eff6ff;
+    color: var(--primary-blue);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.question-counter {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--primary-blue);
+    transition: width 0.3s ease;
+}
+
+/* Pertanyaan */
+.question-text {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #0f172a;
+}
+
+/* Pilihan Ganda */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    width: 100%;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 16px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    color: #334155;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.option-btn:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.option-btn.correct {
+    background: #ecfdf5;
+    border-color: var(--correct-green);
+    color: #065f46;
+    font-weight: bold;
+}
+
+.option-btn.wrong {
+    background: #fef2f2;
+    border-color: var(--wrong-red);
+    color: #991b1b;
+}
+
+/* Box Pembahasan */
+.feedback-box {
+    margin-top: 25px;
+    padding: 18px;
+    background: #f8fafc;
+    border-left: 4px solid var(--primary-blue);
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.feedback-title {
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.feedback-text {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.5;
+}
+
+.quiz-footer {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-action {
+    padding: 12px 26px;
+    background: var(--primary-blue);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-action:hover {
+    background: #1d4ed8;
+}
+
+/* Tampilan Skor Akhir */
+.score-layout {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.score-circle {
+    width: 140px;
+    height: 140px;
+    background: #eff6ff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px auto;
+    border: 3px solid var(--primary-blue);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
+}
+
+.score-number {
+    font-size: 46px;
+    font-weight: bold;
+    color: var(--primary-blue);
+    line-height: 1;
+}
+
+.score-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: bold;
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+.score-buttons-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn-secondary {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+/* Gaya tambahan untuk input nama penjelajah */
+.input-name {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+.input-name:focus {
+    border-color: var(--primary-blue);
+}

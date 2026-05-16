@@ -10,16 +10,13 @@
   
 <header>
     <div class="logo">
-        <img src="assets/img/logo Unived Bengkulu PNG CDR tanpa background.png" alt="Logo">
-        <span>Museum Bengkulu</span>
+        <span>Museum ARL</span>
     </div>
     <nav class="menu">
         <a href="index.html">Home</a>
         <a href="scan.html">Scan</a>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="kuis.html">Quiz</a>
     </nav>
 </header>
 
@@ -28,60 +25,99 @@
         <h1>WELCOME TO THE BENGKULU MUSEUM</h1>
         <h2>Jelajahi Sejarah, Temukan Inspirasi</h2>
         <p>Temukan berbagai koleksi artefak bersejarah</p>
-
-        <div class="search-box">
-            <input type="text" placeholder="Cari koleksi museum...">
-            <button>Cari</button>
+            <div class="search-box"> 
+</div>
         </div>
 
     
 </div>
 </section>
-<section>    
-    <div class="opening-hours-card">
-    <h3>Jam Operasional</h3>
 
-    <div class="status-badge">
-        <span class="dot-online"></span>
-        <span>Sedang Buka</span>
-        <span class="time">Tutup 16:00</span>
+<!--Quiz-->
+<div class="quiz-section">
+    <h2 class="quiz-title">Mulai Belajar & Ikuti Kuis</h2>
+    <p class="quiz-title">Uji Pengetahuanmu tentang  Arkeologi, Etnografi & Filologi</p>
+    
+    <div class="quiz-container">
+        <a href="Quiz-arkeolog.html" class="quiz-card">
+            <div class="quiz-icon-wrapper icon-blue">
+                <span class="quiz-icon">🏛️</span> 
+            </div>
+            <div class="quiz-content">
+                <h3>Arkeologi</h3>
+                <p>Paku tempa, konstruksi benteng, material bangunan</p>
+            </div>
+            <div class="quiz-arrow">›</div>
+        </a>
+
+        <a href="Quiz-etnografi.html" class="quiz-card">
+            <div class="quiz-icon-wrapper icon-green">
+                <span class="quiz-icon">🌿</span>
+            </div>
+            <div class="quiz-content">
+                <h3>Etnografi</h3>
+                <p>Tenaga kerja, tambang emas, budaya lokal</p>
+            </div>
+            <div class="quiz-arrow">›</div>
+        </a>
+
+        <a href="#" class="quiz-card">
+            <div class="quiz-icon-wrapper icon-orange">
+                <span class="quiz-icon">📜</span>
+            </div>
+            <div class="quiz-content">
+                <h3>Filologi</h3>
+                <p>Perjanjian 1724, dokumen sejarah, laporan kolonial</p>
+            </div>
+            <div class="quiz-arrow">›</div>
+        </a>
     </div>
-
-    <div class="hours-list">
-        <p>Selasa – Kamis <span>08:00 – 16:00</span></p>
-        <p>Jumat <span>08:00 – 16:30</span></p>
-        <p>Sabtu – Minggu <span>08:00 – 17:00</span></p>
-        <p class="closed">Senin <span>Tutup</span></p>
-    </div></section>
+</div>
  
 <!-- Gallery -->
 <section class="gallery">
     <section class="categories">
     <h2>Eksplorasi Berdasarkan Kategori</h2>
     <div class="category-grid">
-        <div class="category-item">
+    
+    <div class="category-item">
+        <a href="gallery.html#Arkeologi" style="text-decoration: none; color: inherit; display: block;">
             <div class="category-icon">🏺</div>
             <h3>Arkeologi</h3>
             <p>Temuan benda purbakala dan prasejarah Bengkulu.</p>
-        </div>
-        <div class="category-item">
+        </a>
+    </div>
+
+    <div class="category-item">
+        <a href="gallery.html#Etnografi" style="text-decoration: none; color: inherit; display: block;">
             <div class="category-icon">🎭</div>
             <h3>Etnografi</h3>
             <p>Koleksi budaya, pakaian adat, dan alat musik suku lokal.</p>
-        </div>
-        <div class="category-item">
+        </a>
+    </div>
+
+    <div class="category-item">
+        <a href="gallery.html#filologi" style="text-decoration: none; color: inherit; display: block;">
             <div class="category-icon">📜</div>
             <h3>Filologi</h3>
             <p>Naskah kuno dan literatur sejarah masa lalu.</p>
-        </div>
+        </a>
     </div>
+
+</div>
+    </section>
 </section>
 
 <section class="visit-info">
     <div class="info-container">
-        <div class="info-text">
+        
+        <div class="info-header">
             <h2>Rencanakan Kunjungan Anda</h2>
             <p>Nikmati perjalanan sejarah yang tak terlupakan di jantung kota Bengkulu.</p>
+        </div>
+
+        <div class="info-content-grid">
+            
             <div class="ticket-prices">
                 <div class="price-item">
                     <span>Dewasa</span>
@@ -91,42 +127,50 @@
                     <span>Anak-anak / Pelajar</span>
                     <strong>Rp 3.000</strong>
                 </div>
+            </div>
             
-        <div class="info-features">
-            <ul>
-                <li>✅ Pemandu Wisata Profesional</li>
-                <li>✅ Area Parkir Luas</li>
-                <li>✅ Akses Wi-Fi Gratis</li>
-                <li>✅ Perpustakaan Sejarah</li>
-            </ul>
+            <div class="info-features">
+                <ul>
+                    <li><span class="check-icon">✓</span> Pemandu Wisata Profesional</li>
+                    <li><span class="check-icon">✓</span> Area Parkir Luas</li>
+                    <li><span class="check-icon">✓</span> Akses Wi-Fi Gratis</li>
+                    <li><span class="check-icon">✓</span> Perpustakaan Sejarah</li>
+                </ul>
+            </div>
+
         </div>
+
     </div>
 </section>
-
-    <h2>Koleksi Unggulan</h2>
-
     <div class="gallery-container">
         
         <div class="card">
-            <img src="assets/img/about/kulintang.jpg" alt="Artefak Kuno">
-            <h3>kulintang</h3>
-            <p>Koleksi benda bersejarah dari peradaban kuno yang memiliki nilai budaya tinggi.</p>
+            <img src="assets/img/galeri/paku-benteng.jpg" alt="Artefak Kuno">
+            <h3>Paku Bangunan Fort Marlborough</h3>
+            <p>"Paku yang digunakan untuk bangunan Benteng Marlborough" Dalam dunia museum dan arkeologi, benda ini disebut 
+                "Artefak Paku Tempa Kuno" atau dalam istilah ilmiahnya Hand-Wrought Iron Nail / Paku Besi Tempa.</p>
         </div>
 
         <div class="card">
-            <img src="assets/img/about/alat tenun.jpg" alt="seni lukisan">
-            <h3>Alat Tenun</h3>
-            <p>Berbagai karya seni lukis klasik hingga modern dari seniman terkenal dunia.</p>
+            <img src="assets/img/galeri/alat tenun.jpg" alt="seni lukisan">
+            <h3>Alat Tenun Tradisional Bengkulu</h3>
+            <p>Perkakas tradisional pembuatan kain masyarakat suku lokal.
+                Alat tenun tradisional digunakan masyarakat Bengkulu sejak dahulu untuk membuat kain tenun khas daerah, 
+                terutama kain tenun suku Rejang dan Enggano.</p>
         </div>
 
         <div class="card">
-            <img src="assets/img/about/gading-gajah.jpg"alt="Artefak Kuno">
+            <img src="assets/img/galeri/gading gajah.jpg"alt="Artefak Kuno">
             <h3>Gading Gajah</h3>
             <p>Koleksi patung dengan nilai estetika tinggi yang menggambarkan sejarah.</p>
         </div>
 
     </div>
 </section>
+<footer>
+        <p>&copy; 2026 Niken Aurellia. Hak Cipta Dilindungi.</p>
+    </footer>
+
 
 </body>
 </html>
