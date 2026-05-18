@@ -27,102 +27,48 @@
     </nav>
 
 </header>
-    <!-- MAIN -->
+<!-- LEFT SECTION -->
+<div class="scan-section">
+    <h1>MUSEUMX DESKTOP SCAN</h1>
+    <p class="subtitle">Pindai QR Code Koleksi via Webcam</p>
 
-    <div class="container">
-
-        <!-- LEFT -->
-
-        <div class="scan-section">
-
-            <h1>MUSEUMX DESKTOP SCAN</h1>
-
-            <p class="subtitle">
-                Pindai QR Code Koleksi via Webcam
-            </p>
-
-            <div class="camera-wrapper">
-
-                <div class="camera-title">
-                    Webcam Feed
-                </div>
-
-                <div class="camera-box">
-
-                    <video id="reader" autoplay></video>
-
-                    <!-- scan line -->
-                    <div class="scan-line"></div>
-
-                </div>
-
-            </div>
-
-            <div class="waiting">
-                Menunggu Scan...
-            </div>
-
-            <div class="instruction">
-                (Arahkan QR dari HP/Tablet Anda ke Kamera)
-            </div>
-
+    <div class="camera-wrapper">
+        <div class="camera-title">Webcam Feed</div>
+        <div class="camera-box">
+            <!-- PERBAIKAN: Menggunakan DIV, bukan VIDEO -->
+            <div id="reader" style="width: 100%;"></div>
         </div>
+    </div>
 
-        <!-- RIGHT -->
+    <div class="waiting" id="scan-status-text">Menunggu Scan...</div>
+    <div class="instruction">(Arahkan QR dari HP/Tablet Anda ke Kamera)</div>
+</div>
 
-        <div class="side-panel">
+<!-- RIGHT SECTION -->
+<div class="side-panel">
+    <h3>STATUS & RIWAYAT SCAN</h3>
 
-            <h3>STATUS & RIWAYAT SCAN</h3>
+    <!-- STATUS WEBCAM -->
+    <div class="card">
+        <div class="icon">📷</div>
+        <!-- PERBAIKAN: Ditambah ID agar status bisa berubah dinamis -->
+        <p id="webcam-status">Menghubungkan Kamera...</p>
+    </div>
 
-            <!-- STATUS -->
+    <!-- RESULT -->
+    <div class="card">
+        <h4>Hasil Pindai Terakhir</h4>
+        <!-- PERBAIKAN: Ditambah ID pada IMG dan P agar bisa diganti lewat JS -->
+        <img id="result-img" src="assets/img/galeri/default.jpg" alt="foto code">
+        <p id="result-text">Belum ada data scan</p>
+        <small id="result-id">(ID: -)</small>
+        <button id="detail-btn" style="display:none;">Lihat Detail</button>
+    </div>
 
-            <div class="card">
-
-                <div class="icon">
-                    📷
-                </div>
-
-                <p>Webcam Aktif</p>
-
-            </div>
-
-            <!-- RESULT -->
-
-            <div class="card">
-                <h4>Hasil Pindai Terakhir</h4>
-                <img src="assets/img/galeri/rempah.jpg" alt="foto code">
-                <p>REMPAH - Saksi Sejarah</p>
-                <small>(ID: ID_G0N001)</small>
-               <button onclick="window.location.href='detail-rempah.html'">
-    Lihat Detail
-</button>
-
-            </div>
-
-            <!-- BUTTON -->
-<button class="upload-btn" id="uploadBtn">
-    Switch to file upload mode
-</button>
-
-<input 
-    type="file"
-    id="fileInput"
-    accept="image/*"
-    style="display:none"
->
-
-            <!-- INPUT -->
-
-            <div class="method-box">
-                <p>Input Methods:</p>
-                <small>
-                    — Input Text &nbsp;&nbsp;&nbsp; — Scan via webcam
-                </small>
-
-            </div>
-
-        </div>
-
+    <!-- BUTTON -->
+    <button class="upload-btn" id="uploadBtn">Switch to file upload mode</button>
+    <input type="file" id="fileInput" accept="image/*" style="display:none">
+</div>
     </div>
     <script src="https://unpkg.com/html5-qrcode"></script>
 <script src="js/scan.js"></script>
