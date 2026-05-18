@@ -4,78 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Museum Scan</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <!-- NAVBAR -->
+    <header class="navbar">
 
-   <header class="navbar">
-
-    <div class="logo">
-        Museum ARL
-    </div>
-
-    <nav class="menu">
-
-        <a href="index.html">Home</a>
-        <a href="scan.html">Scan</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About</a>
-    </nav>
-
-</header>
-<!-- LEFT SECTION -->
-<div class="scan-section">
-    <h1>MUSEUMX DESKTOP SCAN</h1>
-    <p class="subtitle">Pindai QR Code Koleksi via Webcam</p>
-
-    <div class="camera-wrapper">
-        <div class="camera-title">Webcam Feed</div>
-        <div class="camera-box">
-            <!-- PERBAIKAN: Menggunakan DIV, bukan VIDEO -->
-            <div id="reader" style="width: 100%;"></div>
+        <div class="logo">
+            Museum ARL
         </div>
+
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="scan.html">Scan</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+        </nav>
+
+    </header>
+
+    <!-- LEFT SECTION -->
+    <div class="scan-section">
+
+        <h1>
+            MUSEUMX DESKTOP SCAN
+        </h1>
+
+        <p class="subtitle">
+            Pindai QR Code Koleksi via Webcam
+        </p>
+
+        <div class="camera-wrapper">
+
+            <div class="camera-title">
+                Webcam Feed
+            </div>
+
+            <div class="camera-box">
+
+                <!-- QR READER -->
+                <div id="reader" class="reader-box"></div>
+
+            </div>
+
+        </div>
+
+        <div class="waiting" id="scan-status-text">
+            Menunggu Scan...
+        </div>
+
+        <div class="instruction">
+            (Arahkan QR dari HP/Tablet Anda ke Kamera)
+        </div>
+
     </div>
 
-    <div class="waiting" id="scan-status-text">Menunggu Scan...</div>
-    <div class="instruction">(Arahkan QR dari HP/Tablet Anda ke Kamera)</div>
+    <!-- RIGHT SECTION -->
+    <div class="side-panel">
+
+        <h3>
+            STATUS & RIWAYAT SCAN
+        </h3>
+
+        <!-- STATUS WEBCAM -->
+        <div class="card">
+
+            <div class="icon">
+                📷
+            </div>
+
+            <p id="webcam-status">
+                Menghubungkan Kamera...
+            </p>
+
+        </div>
+
+        <!-- RESULT -->
+        <div class="card">
+
+            <h4>
+                Hasil Pindai Terakhir
+            </h4>
+
+            <img 
+                id="result-img"
+                src="assets/img/galeri/default.jpg"
+                alt="foto code"
+            >
+
+            <p id="result-text">
+                Belum ada data scan
+            </p>
+
+            <small id="result-id">
+                (ID: -)
+            </small>
+
+            <button id="detail-btn" class="hidden-btn">
+                Lihat Detail
+            </button>
+
+        </div>
+
+        <!-- BUTTON -->
+        <button class="upload-btn" id="uploadBtn">
+    Switch to file upload mode
+</button>
+
+<label for="fileInput" class="hidden-label">
+    Upload QR Code
+</label>
+
+<input 
+    type="file"
+    id="fileInput"
+    class="hidden-input"
+    accept="image/*"
+    title="Upload gambar QR Code"
+>
+
 </div>
 
-<!-- RIGHT SECTION -->
-<div class="side-panel">
-    <h3>STATUS & RIWAYAT SCAN</h3>
-
-    <!-- STATUS WEBCAM -->
-    <div class="card">
-        <div class="icon">📷</div>
-        <!-- PERBAIKAN: Ditambah ID agar status bisa berubah dinamis -->
-        <p id="webcam-status">Menghubungkan Kamera...</p>
-    </div>
-
-    <!-- RESULT -->
-    <div class="card">
-        <h4>Hasil Pindai Terakhir</h4>
-        <!-- PERBAIKAN: Ditambah ID pada IMG dan P agar bisa diganti lewat JS -->
-        <img id="result-img" src="assets/img/galeri/default.jpg" alt="foto code">
-        <p id="result-text">Belum ada data scan</p>
-        <small id="result-id">(ID: -)</small>
-        <button id="detail-btn" style="display:none;">Lihat Detail</button>
-    </div>
-
-    <!-- BUTTON -->
-    <button class="upload-btn" id="uploadBtn">Switch to file upload mode</button>
-    <input type="file" id="fileInput" accept="image/*" style="display:none">
-</div>
-    </div>
     <script src="https://unpkg.com/html5-qrcode"></script>
-<script src="js/scan.js"></script>
+    <script src="js/scan.js"></script>
 
-<footer>
+    <footer>
         <p>&copy; 2026 Niken Aurellia. Hak Cipta Dilindungi.</p>
     </footer>
 
 </body>
 </html>
-
-

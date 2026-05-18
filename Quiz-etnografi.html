@@ -3,75 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museum X Interactive - Kuis Arkeologi</title>
+    <title>Museum  - Kuis Etnografi</title>
+
     <link rel="stylesheet" href="css/style-quiz.css">
 </head>
+
 <body>
 
     <div class="container">
-        <div class="museum-title">Museum X Interactive</div>
 
-        <div id="name-screen" class="quiz-screen">
-            <div style="text-align: center; padding: 20px 10px;">
-                <div style="font-size: 50px; margin-bottom: 15px;">🏛️</div>
-                <h2 style="color: #0f172a; font-size: 24px; margin-bottom: 8px;">Registrasi Penjelajah</h2>
-                <p style="color: #64748b; font-size: 14px; margin-bottom: 25px;">Masukkan nama Anda untuk memulai ekspedisi arkeologi Fort Marlborough:</p>
-                
-                <input type="text" id="visitor-name-input" class="input-name" placeholder="Tulis nama lengkap Anda di sini..." autocomplete="off">
-                
-                <button class="btn-action" onclick="submitName()" style="width: 100%;">Mulai Penjelajahan →</button>
-            </div>
+        <div class="museum-title">
+            Museum ARL
         </div>
 
-        <div id="quiz-screen" class="quiz-screen hidden">
-            <div class="quiz-header">
-                <button class="btn-back" onclick="window.location.href='index.html'">← Keluar</button>
-                <div class="quiz-header-meta">
-                    <div class="category-badge">Arkeologi</div>
-                    <div id="question-counter" class="question-counter">Pertanyaan 1/10</div>
+        <!-- SCREEN NAMA -->
+        <div id="name-screen" class="quiz-screen">
+
+            <div class="intro-box">
+
+                <div class="museum-icon">
+                    🏛️
                 </div>
+
+                <h2 class="title-main">
+                    Registrasi Penjelajah
+                </h2>
+
+                <p class="subtitle-main">
+                    Masukkan nama Anda untuk memulai ekspedisi Etnografi Fort Marlborough:
+                </p>
+
+                <input 
+                    type="text"
+                    id="visitor-name-input"
+                    class="input-name"
+                    placeholder="Tulis nama lengkap Anda di sini..."
+                    autocomplete="off"
+                >
+
+                <button 
+                    class="btn-action btn-full"
+                    onclick="submitName()"
+                >
+                    Mulai Penjelajahan →
+                </button>
+
             </div>
-        
+
+        </div>
+
+        <!-- SCREEN QUIZ -->
+        <div id="quiz-screen" class="quiz-screen hidden">
+
+            <div class="quiz-header">
+
+                <button 
+                    class="btn-back"
+                    onclick="window.location.href='index.html'"
+                >
+                    ← Keluar
+                </button>
+
+                <div class="quiz-header-meta">
+
+                    <div class="category-badge">
+                        Etnografi
+                    </div>
+
+                    <div id="question-counter" class="question-counter">
+                        Pertanyaan 1/10
+                    </div>
+
+                </div>
+
+            </div>
+
             <div class="progress-bar-container">
                 <div id="progress-bar" class="progress-bar"></div>
             </div>
 
-            <div id="question-text" class="question-text">Memuat pertanyaan penjelajahan...</div>
+            <div id="question-text" class="question-text">
+                Memuat pertanyaan penjelajahan...
+            </div>
 
             <div id="options-list" class="options-list">
-                </div>
+            </div>
 
             <div id="feedback-box" class="feedback-box hidden">
-                <div class="feedback-title">Penalaran Sejarah:</div>
-                <div id="feedback-text" class="feedback-text">Detail penjelasan.</div>
+
+                <div class="feedback-title">
+                    Penalaran Sejarah:
+                </div>
+
+                <div id="feedback-text" class="feedback-text">
+                    Detail penjelasan.
+                </div>
+
             </div>
 
             <div class="quiz-footer">
-                <button id="btn-next" class="btn-action hidden" onclick="nextQuestion()">Lanjut Kuis →</button>
+
+                <button 
+                    id="btn-next"
+                    class="btn-action hidden"
+                    onclick="nextQuestion()"
+                >
+                    Lanjut Kuis →
+                </button>
+
             </div>
+
         </div>
 
+        <!-- SCREEN SCORE -->
         <div id="score-screen" class="quiz-screen hidden">
+
             <div class="score-layout">
-                <div style="font-size: 55px; margin-bottom: 15px;">🏆</div>
-                <h2 style="color: #0f172a; font-size: 26px; margin-bottom: 8px;">Selamat, <span id="display-visitor-name" style="color: var(--primary-blue);">Penjelajah</span>!</h2>
-                <p style="color: #64748b; font-size: 14px; margin-bottom: 25px;">Anda telah berhasil menyelesaikan seluruh tantangan evaluasi sejarah.</p>
-                
-                <div class="score-circle">
-                    <span id="final-score" class="score-number">0</span>
-                    <span class="score-label">SKOR AKHIR</span>
+
+                <div class="trophy-icon">
+                    🏆
                 </div>
 
-                <p id="score-summary" style="font-size: 16px; color: #334155; font-weight: 600; margin-bottom: 10px;">Anda menjawab benar 0 dari 10 pertanyaan.</p>
-                
-                <div class="score-buttons-group">
-                    <button class="btn-action" onclick="restartQuiz()">Ulangi Kuis</button>
-                    <button class="btn-action btn-secondary" onclick="window.location.href='index.html'">Pilih Kategori Lain</button>
+                <h2 class="score-title">
+                    Selamat,
+                    <span id="display-visitor-name" class="visitor-name">
+                        Penjelajah
+                    </span>!
+                </h2>
+
+                <p class="score-subtitle">
+                    Anda telah berhasil menyelesaikan seluruh tantangan evaluasi sejarah.
+                </p>
+
+                <div class="score-circle">
+
+                    <span id="final-score" class="score-number">
+                        0
+                    </span>
+
+                    <span class="score-label">
+                        SKOR AKHIR
+                    </span>
+
                 </div>
+
+                <p id="score-summary" class="score-summary">
+                    Anda menjawab benar 0 dari 10 pertanyaan.
+                </p>
+
+                <div class="score-buttons-group">
+
+                    <button 
+                        class="btn-action"
+                        onclick="restartQuiz()"
+                    >
+                        Ulangi Kuis
+                    </button>
+
+                    <button 
+                        class="btn-action btn-secondary"
+                        onclick="window.location.href='index.html'"
+                    >
+                        Pilih Kategori Lain
+                    </button>
+
+                </div>
+
             </div>
-        </div> 
+
+        </div>
+
     </div>
 
-    <script src="js/Quiz-Etnografi.js"></script>
+    <script src="js/Quiz-arkeologi.js"></script>
+
 </body>
 </html>

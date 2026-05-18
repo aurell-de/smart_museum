@@ -33,11 +33,12 @@ header{
     padding:15px 30px;
 
     background: rgba(15,17,21,0.7);
+
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 
     z-index:1000;
 }
-
 /* Logo + teks */
 .logo {
     display: flex;
@@ -1292,18 +1293,21 @@ footer{
         }
 
         /* ── NAVBAR ── */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 60px;
-            background: rgba(13,13,13,0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(201,168,76,0.2);
-        }
+     .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(13,13,13,0.5);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+}
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 22px;
@@ -1711,4 +1715,16 @@ footer{
             .hero-content { padding: 40px 24px; }
             .about-img-badge { right: 0; bottom: 0; }
         }
-  
+  .category-link{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.hidden-label{
+    display: none;
+}
+
+.hidden-input{
+    display: none;
+}
