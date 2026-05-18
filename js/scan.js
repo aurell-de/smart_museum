@@ -8,59 +8,25 @@ window.onload = function(){
     const resultId = document.getElementById("result-id");
     const detailBtn = document.getElementById("detail-btn");
 
-    // Pemetaan Data Koleksi Museum
-    const dataKoleksi = {
-        "TONGKAT": {
-            nama: "TONGKAT - Pusaka Leluhur",
-            id: "ID_TNG002",
-            img: "assets/img/galeri/tongkat.jpg", // Sesuaikan dengan path gambarmu
-            link: "detail-tngkat.html"
-        },
-        "REMPAH": {
-            nama: "Rempah-Rempah",
-            id: "ID_G0N001",
-            img: "assets/img/galeri/rempah.jpg",
-            link: "detail-rempah.html"
-        },
-        "BATIK": {
-            nama: "BATIK - Karya Agung Nusantara",
-            id: "ID_BTK003",
-            img: "assets/img/galeri/batik.jpg",
-            link: "detail-batik.html"
-        }
-    };
-// Fungsi utama ketika QR Code sukses terbaca
-    function onScanSuccess(decodedText) {
-        // Hanya menghapus spasi di awal/akhir, huruf tidak diubah-ubah
-        const teksAsli = decodedText.trim(); 
-        console.log("QR Terdeteksi (Sesuai Huruf Asli):", teksAsli);
-        
-        // Cek apakah teks asli ini cocok dengan yang ada di dataKoleksi
-        if (dataKoleksi[teksAsli]) {
-            const item = dataKoleksi[teksAsli];
+   
+function onScanSuccess(decodedText) {
+    const teksAsli = decodedText.trim();
 
-            // 1. Update Tampilan Hasil Pindai Terakhir di halaman
-            resultImg.src = item.img;
-            resultText.innerText = item.nama;
-            resultId.innerText = `(ID: ${item.id})`;
-            scanStatusText.innerText = "Scan Sukses! Mengalihkan...";
-            
-            // Tampilkan tombol detail dan arahkan fungsinya
+    if (teksAsli.startsWith("http")) {
+        scanStatusText.innerText = "Scan Sukses! Mengalihkan...";
+        if (detailBtn) {
             detailBtn.style.display = "block";
             detailBtn.onclick = function() {
-                window.location.href = item.link;
+                window.location.href = teksAsli;
             };
-
-            // 2. Beri jeda 2 detik sebelum pindah halaman
-            setTimeout(function() {
-                window.location.href = item.link;
-            }, 2000);
-
-        } else {
-            // Jika tidak terdaftar, alert akan memunculkan huruf aslinya agar kamu bisa cek tanda baca/spasinya
-            alert("QR Code terbaca: '" + teksAsli + "' (Koleksi tidak terdaftar. Periksa huruf besar-kecil atau tanda strip-nya)");
         }
+        setTimeout(function() {
+            window.location.href = teksAsli;
+        }, 1500);
+    } else {
+        alert("QR tidak dikenali: " + teksAsli);
     }
+}
 
     // Inisialisasi Html5Qrcode
     const html5QrCode = new Html5Qrcode("reader");
