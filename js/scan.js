@@ -16,8 +16,8 @@ window.onload = function(){
             img: "assets/img/galeri/tongkat.jpg", // Sesuaikan dengan path gambarmu
             link: "detail-tngkat.html"
         },
-        "Rempah-Rempah": {
-            nama: "REMPAH - Saksi Sejarah",
+        "Rempah Rempah": {
+            nama: "Rempah Rempah",
             id: "ID_G0N001",
             img: "assets/img/galeri/rempah.jpg",
             link: "detail-rempah.html"
@@ -29,14 +29,15 @@ window.onload = function(){
             link: "detail-batik.html"
         }
     };
-
-    // Fungsi utama ketika QR Code sukses terbaca
+// Fungsi utama ketika QR Code sukses terbaca
     function onScanSuccess(decodedText) {
-        console.log("QR Terdeteksi:", decodedText);
+        // Hanya menghapus spasi di awal/akhir, huruf tidak diubah-ubah
+        const teksAsli = decodedText.trim(); 
+        console.log("QR Terdeteksi (Sesuai Huruf Asli):", teksAsli);
         
-        // Cek apakah hasil scan terdaftar di dataKoleksi
-        if (dataKoleksi[decodedText]) {
-            const item = dataKoleksi[decodedText];
+        // Cek apakah teks asli ini cocok dengan yang ada di dataKoleksi
+        if (dataKoleksi[teksAsli]) {
+            const item = dataKoleksi[teksAsli];
 
             // 1. Update Tampilan Hasil Pindai Terakhir di halaman
             resultImg.src = item.img;
@@ -50,13 +51,14 @@ window.onload = function(){
                 window.location.href = item.link;
             };
 
-            // 2. Beri jeda 2 detik agar user bisa melihat perubahan data sebelum pindah halaman
+            // 2. Beri jeda 2 detik sebelum pindah halaman
             setTimeout(function() {
                 window.location.href = item.link;
             }, 2000);
 
         } else {
-            alert("QR Code terbaca: " + decodedText + " (Koleksi tidak terdaftar)");
+            // Jika tidak terdaftar, alert akan memunculkan huruf aslinya agar kamu bisa cek tanda baca/spasinya
+            alert("QR Code terbaca: '" + teksAsli + "' (Koleksi tidak terdaftar. Periksa huruf besar-kecil atau tanda strip-nya)");
         }
     }
 
