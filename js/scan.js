@@ -19,7 +19,7 @@ window.onload = function(){
         "Rempah-Rempah": {
             nama: "REMPAH - Saksi Sejarah",
             id: "ID_G0N001",
-            img: "assets/img/qr-cde/rempah.png",
+            img: "assets/img/galeri/rempah.png",
             link: "detail-rempah.html"
         },
         "BATIK": {
