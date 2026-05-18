@@ -229,10 +229,10 @@ header{
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Supaya otomatis turun rapi jika dibuka di layar HP */
+    flex-wrap: wrap; 
 }
 
-/* Base Card Kuis (Mirip persis seperti gambar yang Anda kirim) */
+/* Base Card Kuis */
 .quiz-card {
     background: #ffffff;
     display: flex;
@@ -247,7 +247,7 @@ header{
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efek sedikit terangkat saat di-hover */
+
 .quiz-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -261,7 +261,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0; /* Mencegah ikon gepeng */
+    flex-shrink: 0; 
     margin-right: 15px;
 }
 
@@ -277,19 +277,19 @@ header{
 /* Pengaturan Teks di dalam Card */
 .quiz-content {
     text-align: left;
-    padding-right: 20px; /* Jarak agar teks tidak menabrak panah */
+    padding-right: 20px; 
 }
 
 .quiz-content h3 {
     margin: 0 0 4px 0;
-    color: #1e293b; /* Warna teks gelap tebal */
+    color: #1e293b; 
     font-size: 18px;
     font-weight: 700;
 }
 
 .quiz-content p {
     margin: 0;
-    color: #64748b; /* Warna teks deskripsi abu-abu halus */
+    color: #64748b; 
     font-size: 13px;
     line-height: 1.4;
 }
@@ -307,8 +307,7 @@ header{
 /* --- CATEGORIES SECTION --- */
 .categories {
     padding: 80px 50px;
-    background: #0f1115; /* Hitam yang sedikit berbeda agar ada pemisah */
-    text-align: center;
+    background: #0f1115; 
 }
 
 .category-grid {
@@ -352,7 +351,7 @@ header{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 50px; /* Jarak antara judul dan konten bawah */
+    gap: 50px;
 }
 
 /* Header Section (Judul Tengah) */
@@ -380,7 +379,7 @@ header{
     justify-content: space-between;
     align-items: center;
     gap: 60px;
-    flex-wrap: wrap; /* Fleksibel jika dibuka di layar HP */
+    flex-wrap: wrap;
 }
 
 /* SISI KIRI: TIKET */
@@ -392,9 +391,9 @@ header{
 }
 
 .price-item {
-    background: rgba(255, 215, 0, 0.04); /* Efek transparan gelap emas mewah */
+    background: rgba(255, 215, 0, 0.04);
     border: 1px solid rgba(255, 215, 0, 0.2);
-    border-left: 4px solid #ffd700; /* Garis vertikal emas tegas di kiri */
+    border-left: 4px solid #ffd700; 
     padding: 25px 20px;
     border-radius: 12px;
     flex: 1;
@@ -413,7 +412,7 @@ header{
 .price-item strong {
     display: block;
     font-size: 24px;
-    color: #ffd700; /* Warna emas cerah untuk harga */
+    color: #ffd700; 
     font-weight: 700;
 }
 
@@ -443,7 +442,7 @@ header{
 /* Custom Check Icon Pengganti Emoji */
 .check-icon {
     background: rgba(76, 175, 80, 0.15);
-    color: #4CAF50; /* Warna hijau indikator sukses/centang */
+    color: #4CAF50; 
     width: 24px;
     height: 24px;
     border-radius: 6px;
@@ -478,14 +477,13 @@ footer {
 /* Container Utama Gallery */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tetap 3 kolom ke samping */
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); 
     padding: 20px;
 }
 
 /* Kartu Koleksi */
 .card {
-    background: #15171c; /* Warna gelap sesuai gambar */
+    background: #15171c; 
     border-radius: 15px;
     overflow: hidden;
     display: flex;
@@ -496,14 +494,14 @@ footer {
 /* Gambar di dalam Kartu */
 .card img {
     width: 100%;
-    height: 200px; /* Tinggi gambar seragam */
+    height: 200px; 
     object-fit: cover;
 }
 
 /* Area Konten Teks */
 .card-content {
     padding: 15px;
-    text-align: center; /* Teks rata tengah sesuai gambar */
+    text-align: center; 
 }
 
 .card h3 {
@@ -1091,7 +1089,6 @@ footer{
 }
 
 /*DETAIL-EMAS*/
-/* Container Utama Detail */
 .detail-container {
     max-width: 900px;
     margin: 100px auto 50px;
@@ -1182,7 +1179,7 @@ footer{
     align-self: center; 
 }
 
-/* Ukuran QR agar proporsional */
+/* Ukuran QR */
 .qr-card {
     width: 100px;
     height: 100px;
@@ -1195,60 +1192,59 @@ footer{
 
 @media (max-width: 768px) {
     
-    /* 1. Perbaikan Layout Utama (Kamera & Side Panel) */
+    /* Perbaikan Layout Utama (Kamera & Side Panel) */
     .container {
-        flex-direction: column; /* Mengubah susunan dari ke samping menjadi ke bawah */
+        flex-direction: column; 
         gap: 20px;
         padding: 10px;
     }
 
     .side-panel {
-        width: 100%; /* Lebar panel kanan menjadi penuh semulus layar HP */
+        width: 100%; 
     }
 
-    /* 2. Mengatur Kamera Scan & Video agar Tidak Terpotong atau Terlalu Tinggi */
+   
     video, #reader {
-        height: auto !important; /* Mengganti tinggi kaku 500px menjadi otomatis */
-        aspect-ratio: 4 / 3;    /* Membentuk kotak kamera yang ideal di HP */
-        max-height: 350px;       /* Membatasi tinggi agar tidak memakan ruang layar */
+        height: auto !important; 
+        aspect-ratio: 4 / 3;    
+        max-height: 350px;      
     }
 
     .camera-wrapper {
-        padding: 10px; /* Memperkecil padding agar menghemat ruang */
+        padding: 10px; 
         border-radius: 18px;
     }
 
     .scan-section h1 {
-        font-size: 28px; /* Memperkecil ukuran judul di HP */
+        font-size: 28px; 
     }
 
     .subtitle {
         font-size: 16px;
     }
 
-    /* 3. Grid Galeri Koleksi (Dari 3 Kolom Menjadi 1 Kolom) */
     .gallery-container {
-        grid-template-columns: 1fr; /* Di HP, kartu koleksi berbaris 1 per 1 ke bawah */
+        grid-template-columns: 1fr; 
         gap: 15px;
         padding: 10px;
     }
 
     .card img {
-        height: 180px; /* Sedikit memperkecil tinggi gambar kartu di HP */
+        height: 180px; 
     }
 
-    /* 4. Menyesuaikan QR Wrapper agar Tetap di Tengah dan Rapi */
+    /* Menyesuaikan QR Wrapper agar Tetap di Tengah dan Rapi */
     .qr-wrapper {
-        width: 100%; /* Memenuhi lebar container kartu */
-        max-width: 140px; /* Batas aman kotak QR di HP */
+        width: 100%; 
+        max-width: 140px;
         margin-top: 15px;
         padding: 8px;
     }
 
     .qr-card {
-        width: 100%;  /* QR Code menyesuaikan kotak pembungkusnya */
+        width: 100%;  
         height: auto;
-        aspect-ratio: 1 / 1; /* Memastikan QR tetap berbentuk kotak sempurna */
+        aspect-ratio: 1 / 1; 
     }
 
     /* 5. Bagian Kuis / Quiz Box */
@@ -1261,7 +1257,7 @@ footer{
     }
 
     .question p {
-        font-size: 16px; /* Ukuran teks pertanyaan lebih bersahabat untuk layar kecil */
+        font-size: 16px; /
     }
 
     .quiz-category button {
@@ -1727,4 +1723,19 @@ footer{
 
 .hidden-input{
     display: none;
+}
+
+/*TIKET*/
+.white-text{
+    color: var(--white);
+}
+
+.small-muted{
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.gold-small{
+    color: var(--gold);
+    font-size: 12px;
 }

@@ -1,4 +1,4 @@
-// Bank Soal Arkeologi Asli (Tidak Ada Yang Diubah)
+
 const questions = [
     {
         question: "Mengapa tujuh buah paku hitam berkarat koleksi Fort Marlborough dalam dunia arkeologi secara spesifik disebut 'hand-wrought nail'?",
@@ -115,7 +115,7 @@ const questions = [
 let currentQuestionIndex = 0;
 let hasAnswered = false;
 let totalCorrectAnswers = 0;
-let visitorName = ""; // Variabel penampung nama pengguna
+let visitorName = ""; 
 
 // Fungsi memproses input nama di awal halaman
 function submitName() {

@@ -244,7 +244,7 @@ const questions = [
 let currentQuestionIndex = 0;
 let hasAnswered = false;
 let totalCorrectAnswers = 0;
-let visitorName = ""; // Variabel penampung nama pengguna
+let visitorName = ""; 
 
 // Fungsi memproses input nama di awal halaman
 function submitName() {
