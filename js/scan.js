@@ -16,8 +16,8 @@ window.onload = function(){
             img: "assets/img/galeri/tongkat.jpg", // Sesuaikan dengan path gambarmu
             link: "detail-tngkat.html"
         },
-        "Rempah Rempah": {
-            nama: "Rempah Rempah",
+        "Rempah-Rempah": {
+            nama: "Rempah-Rempah",
             id: "ID_G0N001",
             img: "assets/img/galeri/rempah.jpg",
             link: "detail-rempah.html"
