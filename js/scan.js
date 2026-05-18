@@ -7,28 +7,54 @@ window.onload = function(){
     const resultId = document.getElementById("result-id");
     const detailBtn = document.getElementById("detail-btn");
 
+    // === INI BAGIAN UTAMA YANG DIPERBAIKI ===
     function onScanSuccess(decodedText) {
         const teksAsli = decodedText.trim();
 
         if (teksAsli.startsWith("http")) {
+            // 1. Ambil ID artefak dari URL (Contoh: "detail-keris.html" menjadi "keris")
             const namaFile = teksAsli.split("/").pop().replace(".html", "").replace("detail-", "");
+            
+            // 2. Tampilkan teks nama dan ID ke panel kanan
             resultText.innerText = namaFile.toUpperCase();
             resultId.innerText = "(ID: " + namaFile + ")";
 
-            scanStatusText.innerText = "Scan Sukses! Mengalihkan...";
+            // 3. SEKARANG GAMBAR BISA BERUBAH OTOMATIS
+            // Mencari gambar di folder dengan nama sesuai ID, misal: assets/img/galeri/keris.jpg
+            resultImg.src = "assets/img/galeri/" + namaFile + ".jpg"; 
+            
+            // Jika file gambarnya tidak ada/salah nama, pasang gambar default agar tidak rusak
+            resultImg.onerror = function() {
+                this.src = "assets/img/galeri/default.jpg";
+            };
+
+            // 4. Ubah teks status di bawah kamera
+            scanStatusText.innerText = "Scan Sukses! Data Ditampilkan.";
+            
+            // 5. Memunculkan tombol detail dan mengarahkan ke link asli jika diklik
             if (detailBtn) {
+                detailBtn.classList.remove("hidden-btn"); // Hapus class hidden jika ada di CSS
                 detailBtn.style.display = "block";
                 detailBtn.onclick = function() {
                     window.location.href = teksAsli;
                 };
             }
-            setTimeout(function() {
-                window.location.href = teksAsli;
-            }, 1500);
+
+            // 6. Jeda kamera sebentar supaya tidak terus-menerus memindai QR yang sama
+            if (html5QrCode.isScanning) {
+                html5QrCode.stop().then(() => {
+                    webcamStatus.innerText = "Kamera Dijeda (Hasil Muncul)";
+                    webcamStatus.style.color = "blue";
+                }).catch(err => console.error(err));
+            }
+
+        
+
         } else {
             alert("QR tidak dikenali: " + teksAsli);
         }
     }
+    // =======================================
 
     const html5QrCode = new Html5Qrcode("reader");
 
